@@ -4,7 +4,7 @@ Adds utility functions for automatically cleaning aliases, functions and exports
 
 ## Usage
 
-After installing with your zsh plugin manager of choice add `autoenv-track-{pre,post}` to your `.autoenv.zsh` and `autoenv-track-restore` to your `.autoenv_leave.zsh`:
+After installing with your zsh plugin manager of choice add `@autoenv-track-{pre,post}` to your `.autoenv.zsh` and `@autoenv-track-restore` to your `.autoenv_leave.zsh`:
 
 
 `.autoenv.zsh`:
@@ -29,12 +29,12 @@ After installing with your zsh plugin manager of choice add `autoenv-track-{pre,
 # ... as well as another plugin
 # zinit load "another/zsh-plugin"
 
-autoenv-track-pre
+@autoenv-track-pre
 
 #  your auotenv code here
 
 # Save the lists of exports, functions and aliases defined in your code above
-autoenv-track-post
+@autoenv-track-post
 
 # Defintions added after this call won't be tracked
 
@@ -44,7 +44,7 @@ autoenv-track-post
 ```zsh
 
 # Unset the definitons saved in .autoenv.zsh
-autoenv-track-restore
+@autoenv-track-restore
 
 # Unload the loaded plugins
 # zinit unload "another/zsh-plugin"

@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-autoenv-track-pre() {
+@autoenv-track-pre() {
   emulate -L zsh
   setopt localoptions extendedglob
   
@@ -15,7 +15,7 @@ autoenv-track-pre() {
   fi
 }
 
-autoenv-track-post() {
+@autoenv-track-post() {
   emulate -L zsh
   setopt localoptions extendedglob
   
@@ -47,7 +47,7 @@ autoenv-track-post() {
   unset _AUTOENV_TRACK_EXPORTS_PRE
 }
 
-autoenv-track-restore() {
+@autoenv-track-restore() {
   emulate -L zsh
   setopt localoptions extendedglob
   
@@ -82,5 +82,7 @@ autoenv-track-restore() {
 }
 
 autoenv-track_plugin_unload() {
-  unfunction autoenv-track{-pre,-post,-restore,_plugin_unload}
+  unfunction \
+    @autoenv-track{-pre,-post,-restore} \
+    autoenv-track_plugin_unload
 }
