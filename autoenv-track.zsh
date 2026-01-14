@@ -80,3 +80,7 @@ autoenv-track-restore() {
     unset _AUTOENV_TRACK_EXPORTS
   }
 }
+
+autoenv-track_plugin_unload() {
+  unfunction autoenv-track{-pre,-post,-restore,_plugin_unload}
+}
